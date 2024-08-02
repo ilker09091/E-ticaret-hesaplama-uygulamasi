@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+    height: 200vh;
+    max-width: 100%;
+}
+/* !NAVBAR */
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    z-index: 999;   
+}
+
+header h1{
+    width: 30%;
+    margin: 20px;
+    padding: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+
+}
+
+#menu-btn{
+    display: none;
+    cursor: pointer;
+}
+
+header nav{
+    width: 30%;
+}
+
+header nav ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+header nav ul li a::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #333;
+    transition: all 0.5s ease;
+}
+
+header nav ul li a:hover::after{
+    width: 100%;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+}
+
+header .search{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+header .search input{
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #333;
+    outline: none;
+    border-radius: 20px 0 0 20px;
+}
+
+header .search button{
+    width: 20%;
+    padding: 10px;
+    border: 1px solid #333;
+    outline: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 0px 20px 20px 0;
+}
+
+@media screen and (max-width: 868px){
+    #menu-btn{  
+        width: 20%;
+        display: block;
+        font-size: 34px;
+        color: #333;
+        cursor: pointer;
+        margin: 0 5px;
+        z-index: 999;
+    }
+    
+    header{
+        width: 100%;
+        position: sticky;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        z-index: 999;
+    }
+
+    nav{
+        position: absolute;
+        top: 10%;
+        left: 0;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 20vh;
+        flex-direction: column;
+        background-color: #fff;
+        padding: 40%;
+        transform: translateX(-100%);
+        transition: all 0.5s ease;
+        z-index: 999;
+
+    }
+
+    nav ul{
+        flex-direction: column;
+    }
+
+    nav.active{
+        transform: translateX(0);
+        display: block;
+
+    }
+
+    header .search{
+        width: 60%;
+    }
+
+}
+/* !NAVBAR */
+
+
+
+
+/* MAIN */
+
+
+
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2{
+    font-size: 36px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.container .products {
+    width: 70%; 
+}
+
+
+
+.container .products .cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+
+.remove-btn{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.container aside{
+    width: 20%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    bottom: 795px;
+    right: 0;
+    left: 990px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.container aside .total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.container aside .total button{
+    background-color: #333;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 40px;
+}
+
+@media screen and (max-width: 868px){
+    .container .products{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .container .products .cards{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .container aside{
+        width: 90%;
+        margin-top: 20px;
+        position: relative;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        padding: 10px;
+    }
+}
